@@ -1,28 +1,30 @@
 :: Codigo Menu V.5
-:: Aplicaci�n desarrollada y programada por �lvaro G�mez Suarez & Alejandro Ortega Cadahia
-:: Esta aplicaci�n tiene derechos de autor con su respectivo copyright.
-:: Si esta viendo este c�digo y no es un administrador esta violando las normas de la comunidad.
+:: Aplicación desarrollada y programada por Álvaro Gómez Suarez & Alejandro Ortega Cadahia
+:: Esta aplicación tiene derechos de autor con su respectivo copyright.
+:: Si esta viendo este código y no es un administrador esta violando las normas de la comunidad.
 
 @echo off
 title Iniciando menu
 set vers=5
 set dec_c_ad=
+set /a n_inc=0
 
 :inicializacion_menu
-if not exist %SystemDrive%\Menu_AA (mkdir %SystemDrive%\Menu_AA & goto init_sistem_menu) else (goto continuar)
-:init_sistem_menu
-if not exist %SystemDrive%\Menu_AA\color_us_f.txt (echo fondo:0>%SystemDrive%\Menu_AA\color_us_f.txt)
-if not exist %SystemDrive%\Menu_AA\color_us_t.txt (echo texto:e>%SystemDrive%\Menu_AA\color_us_t.txt)
-if not exist %SystemDrive%\Menu_AA\agenda.txt (type nul>%SystemDrive%\Menu_AA\agenda.txt)
-if not exist %SystemDrive%\Menu_AA\ejercicios.txt (type nul>%SystemDrive%\Menu_AA\ejercicios.txt)
-if not exist %SystemDrive%\Menu_AA\examenes.txt (type nul>%SystemDrive%\Menu_AA\examenes.txt)
 
-set /p color_f= < %SystemDrive%\Menu_AA\color_us_f.txt
-set /p color_t= < %SystemDrive%\Menu_AA\color_us_t.txt
+if not exist %SystemDrive%\Menu_AA (mkdir C:\Menu_AA & goto init_sistem_menu) else (goto continuar)
+:init_sistem_menu
+if not exist %SystemDrive%\Menu_AA\color_us_f.txt (echo fondo:0>C:\Menu_AA\color_us_f.txt)
+if not exist %SystemDrive%\Menu_AA\color_us_t.txt (echo texto:e>C:\Menu_AA\color_us_t.txt)
+if not exist C:\Menu_AA\agenda.txt (type nul>C:\Menu_AA\agenda.txt)
+if not exist C:\Menu_AA\ejercicios.txt (type nul>C:\Menu_AA\ejercicios.txt)
+if not exist C:\Menu_AA\examenes.txt (type nul>C:\Menu_AA\examenes.txt)
+
+set /p color_f= < C:\Menu_AA\color_us_f.txt
+set /p color_t= < C:\Menu_AA\color_us_t.txt
 
 color %color_f:~6,6%%color_t:~6,6%
 
-if not exist %SystemDrive%\Menu_AA\log.txt (nul>%SystemDrive%\Menu_AA\log.txt)
+if not exist %SystemDrive%\Menu_AA\log.txt (nul>C:\Menu_AA\log.txt)
 mode con cols=43 lines=27
 
 set us_intr=
@@ -35,11 +37,11 @@ echo  =          BIENVENIDO AL MENU           =
 echo  =========================================
 echo  =                                       =
 echo  =    Primero debe introducir la         =
-echo  =    contrase�a y usuario deseado       =
+echo  =    contrase¤a y usuario deseado       =
 echo  =    tenga en cuenta que el usuario     =
-echo  =    y contrase�a introducida es la     =
+echo  =    y contrase¤a introducida es la     =
 echo  =    que va a tener que introducir      =
-echo  =    siempre que inicie la aplicaci�n   =
+echo  =    siempre que inicie la aplicaci¢n   =
 echo  =                                       =
 echo  =========================================
 echo.
@@ -47,20 +49,74 @@ echo.
 echo Introduzca su usuario:
 set /p us_intr=
 echo.
-echo Introduzca su contrase�a:
+echo Introduzca su contrase¤a:
 set /p pass_intr=
 
-if not exist %SystemDrive%\Menu_AA\us_12332342.txt (echo %us_intr%>%SystemDrive%\Menu_AA\us_12332342.txt)
-if not exist %SystemDrive%\Menu_AA\pass_12332342.txt (echo %pass_intr%>%SystemDrive%\Menu_AA\pass_12332342.txt)
+set us_intr=%us_intr:a=128390937693%
+set us_intr=%us_intr:b=012671234683%
+set us_intr=%us_intr:c=123217690492%
+set us_intr=%us_intr:d=312831204693%
+set us_intr=%us_intr:e=179421798043%
+set us_intr=%us_intr:f=097124896183%
+set us_intr=%us_intr:g=012120164327%
+set us_intr=%us_intr:h=982153120401%
+set us_intr=%us_intr:i=621289706394%
+set us_intr=%us_intr:j=497124960123%
+set us_intr=%us_intr:k=298361071307%
+set us_intr=%us_intr:l=774357804072%
+set us_intr=%us_intr:m=869036253025%
+set us_intr=%us_intr:n=679320237923%
+set us_intr=%us_intr:o=782430724027%
+set us_intr=%us_intr:p=340871370310%
+set us_intr=%us_intr:q=602834682352%
+set us_intr=%us_intr:r=892346629369%
+set us_intr=%us_intr:s=078234615158%
+set us_intr=%us_intr:t=087234117111%
+set us_intr=%us_intr:u=807142604505%
+set us_intr=%us_intr:v=012485327858%
+set us_intr=%us_intr:w=570235625305%
+set us_intr=%us_intr:x=680723562362%
+set us_intr=%us_intr:y=293479116699%
+set us_intr=%us_intr:z=243807824304%
 
-if not exist %SystemDrive%\Menu_AA\dis_extrem_right_left.txt (echo =>%SystemDrive%\Menu_AA\dis_extrem_right_left.txt)
-if not exist %SystemDrive%\Menu_AA\dis_mid.txt (echo =>%SystemDrive%\Menu_AA\dis_mid.txt)
-if not exist %SystemDrive%\Menu_AA\dis_mid_right.txt (echo =>%SystemDrive%\Menu_AA\dis_mid_right.txt)
-if not exist %SystemDrive%\Menu_AA\dis_mid_left.txt (echo =>%SystemDrive%\Menu_AA\dis_mid_left.txt)
-if not exist %SystemDrive%\Menu_AA\dis_up_left.txt (echo =>%SystemDrive%\Menu_AA\dis_up_left.txt)
-if not exist %SystemDrive%\Menu_AA\dis_up_right.txt (echo =>%SystemDrive%\Menu_AA\dis_up_right.txt)
-if not exist %SystemDrive%\Menu_AA\dis_down_right.txt (echo =>%SystemDrive%\Menu_AA\dis_down_right.txt)
-if not exist %SystemDrive%\Menu_AA\dis_down_left.txt (echo =>%SystemDrive%\Menu_AA\dis_down_left.txt)
+set pass_intr=%pass_intr:a=128390937693%
+set pass_intr=%pass_intr:b=012671234683%
+set pass_intr=%pass_intr:c=123217690492%
+set pass_intr=%pass_intr:d=312831204693%
+set pass_intr=%pass_intr:e=179421798043%
+set pass_intr=%pass_intr:f=097124896183%
+set pass_intr=%pass_intr:g=012120164327%
+set pass_intr=%pass_intr:h=982153120401%
+set pass_intr=%pass_intr:i=621289706394%
+set pass_intr=%pass_intr:j=497124960123%
+set pass_intr=%pass_intr:k=298361071307%
+set pass_intr=%pass_intr:l=774357804072%
+set pass_intr=%pass_intr:m=869036253025%
+set pass_intr=%pass_intr:n=679320237923%
+set pass_intr=%pass_intr:o=782430724027%
+set pass_intr=%pass_intr:p=340871370310%
+set pass_intr=%pass_intr:q=602834682352%
+set pass_intr=%pass_intr:r=892346629369%
+set pass_intr=%pass_intr:s=078234615158%
+set pass_intr=%pass_intr:t=087234117111%
+set pass_intr=%pass_intr:u=807142604505%
+set pass_intr=%pass_intr:v=012485327858%
+set pass_intr=%pass_intr:w=570235625305%
+set pass_intr=%pass_intr:x=680723562362%
+set pass_intr=%pass_intr:y=293479116699%
+set pass_intr=%pass_intr:z=243807824304%
+
+if not exist %SystemDrive%\Menu_AA\us_12332342.txt (echo %us_intr%>C:\Menu_AA\us_12332342.txt)
+if not exist %SystemDrive%\Menu_AA\pass_12332342.txt (echo %pass_intr%>C:\Menu_AA\pass_12332342.txt)
+
+if not exist %SystemDrive%\Menu_AA\dis_extrem_right_left.txt (echo =>C:\Menu_AA\dis_extrem_right_left.txt)
+if not exist %SystemDrive%\Menu_AA\dis_mid.txt (echo =>C:\Menu_AA\dis_mid.txt)
+if not exist %SystemDrive%\Menu_AA\dis_mid_right.txt (echo =>C:\Menu_AA\dis_mid_right.txt)
+if not exist %SystemDrive%\Menu_AA\dis_mid_left.txt (echo =>C:\Menu_AA\dis_mid_left.txt)
+if not exist %SystemDrive%\Menu_AA\dis_up_left.txt (echo =>C:\Menu_AA\dis_up_left.txt)
+if not exist %SystemDrive%\Menu_AA\dis_up_right.txt (echo =>C:\Menu_AA\dis_up_right.txt)
+if not exist %SystemDrive%\Menu_AA\dis_down_right.txt (echo =>C:\Menu_AA\dis_down_right.txt)
+if not exist %SystemDrive%\Menu_AA\dis_down_left.txt (echo =>C:\Menu_AA\dis_down_left.txt)
 
 set /p dis_extrem_right_left= < %SystemDrive%\Menu_AA\dis_extrem_right_left.txt
 set /p dis_mid= < %SystemDrive%\Menu_AA\dis_mid.txt
@@ -116,8 +172,28 @@ set /p color_t= < %SystemDrive%\Menu_AA\color_us_t.txt
 color %color_f:~6,6%%color_t:~6,6%
 
 :init_ses
-if not exist %SystemDrive%\Menu_Activacion\948375274093480983928.txt goto no_activado
-set /p dis_mid= < %SystemDrive%\Menu_AA\dis_mid.txt
+attrib -h %SystemDrive%\Activacion\948375274093480983928.txt
+set /p act_cont= < %SystemDrive%\Activacion\948375274093480983928.txt
+if not exist %SystemDrive%\Activacion\948375274093480983928.txt (goto no_activado)
+if "%act_cont%"=="98328yqwd89r983yr90wf0y509705709505709570750750975093ure093u0e9dxh94ohtehfoyu059095u050u5096u9u59u696" (goto cont_lic) else (goto no_activado)
+
+:no_activado
+attrib +h %SystemDrive%\Activacion\948375274093480983928.txt
+title Error de activaci¢n - Sin licencia
+color 74
+cls
+echo.
+echo Lo sentimos, no tiene licencia de
+echo activacion para usar el menu en este equipo
+echo Para arreglarlo pidale a los administradores para que lo activen en su equipo.
+echo.
+echo Presione ENTER para continuar
+pause>nul
+exit
+
+:cont_lic
+attrib +h %SystemDrive%\Menu_Activacion\948375274093480983928.txt
+cls
 
 set us=
 set pass=
@@ -127,33 +203,87 @@ title Iniciar sesion    %date%
 set /p pass_a= < %SystemDrive%\Menu_AA\pass_12332342.txt
 set /p us_a= < %SystemDrive%\Menu_AA\us_12332342.txt
 
+set us_a=%us_a:128390937693=a%
+set us_a=%us_a:012671234683=b%
+set us_a=%us_a:123217690492=c%
+set us_a=%us_a:312831204693=d%
+set us_a=%us_a:179421798043=e%
+set us_a=%us_a:097124896183=f%
+set us_a=%us_a:012120164327=g%
+set us_a=%us_a:982153120401=h%
+set us_a=%us_a:621289706394=i%
+set us_a=%us_a:497124960123=j%
+set us_a=%us_a:298361071307=k%
+set us_a=%us_a:774357804072=l%
+set us_a=%us_a:869036253025=m%
+set us_a=%us_a:679320237923=n%
+set us_a=%us_a:782430724027=o%
+set us_a=%us_a:340871370310=p%
+set us_a=%us_a:602834682352=q%
+set us_a=%us_a:892346629369=r%
+set us_a=%us_a:078234615158=s%
+set us_a=%us_a:087234117111=t%
+set us_a=%us_a:807142604505=u%
+set us_a=%us_a:012485327858=v%
+set us_a=%us_a:570235625305=w%
+set us_a=%us_a:680723562362=x%
+set us_a=%us_a:293479116699=y%
+set us_a=%us_a:243807824304=z%
+
+set pass_a=%pass_a:128390937693=a%
+set pass_a=%pass_a:012671234683=b%
+set pass_a=%pass_a:123217690492=c%
+set pass_a=%pass_a:312831204693=d%
+set pass_a=%pass_a:179421798043=e%
+set pass_a=%pass_a:097124896183=f%
+set pass_a=%pass_a:012120164327=g%
+set pass_a=%pass_a:982153120401=h%
+set pass_a=%pass_a:621289706394=i%
+set pass_a=%pass_a:497124960123=j%
+set pass_a=%pass_a:298361071307=k%
+set pass_a=%pass_a:774357804072=l%
+set pass_a=%pass_a:869036253025=m%
+set pass_a=%pass_a:679320237923=n%
+set pass_a=%pass_a:782430724027=o%
+set pass_a=%pass_a:340871370310=p%
+set pass_a=%pass_a:602834682352=q%
+set pass_a=%pass_a:892346629369=r%
+set pass_a=%pass_a:078234615158=s%
+set pass_a=%pass_a:087234117111=t%
+set pass_a=%pass_a:807142604505=u%
+set pass_a=%pass_a:012485327858=v%
+set pass_a=%pass_a:570235625305=w%
+set pass_a=%pass_a:680723562362=x%
+set pass_a=%pass_a:293479116699=y%
+set pass_a=%pass_a:243807824304=z%
+
 mode con cols=43 lines=7
+
 cls
-echo  %dis_mid%%dis_mid%%dis_mid%%dis_mid%%dis_mid%%dis_mid%%dis_mid%%dis_mid%%dis_mid%%dis_mid%%dis_mid%%dis_mid%%dis_mid%%dis_mid%%dis_mid%%dis_mid%%dis_mid%%dis_mid%%dis_mid%%dis_mid%%dis_mid%%dis_mid%%dis_mid%%dis_mid%%dis_mid%%dis_mid%%dis_mid%%dis_mid%%dis_mid%%dis_mid%%dis_mid%%dis_mid%%dis_mid%%dis_mid%
-echo  Usuario
+echo.
+echo  Usuario:
 set /p us=":: "
-echo  %dis_mid%%dis_mid%%dis_mid%%dis_mid%%dis_mid%%dis_mid%%dis_mid%%dis_mid%%dis_mid%%dis_mid%%dis_mid%%dis_mid%%dis_mid%%dis_mid%%dis_mid%%dis_mid%%dis_mid%%dis_mid%%dis_mid%%dis_mid%%dis_mid%%dis_mid%%dis_mid%%dis_mid%%dis_mid%%dis_mid%%dis_mid%%dis_mid%%dis_mid%%dis_mid%%dis_mid%%dis_mid%%dis_mid%%dis_mid%
-echo  Contrase�a para %us%
+echo.
+echo  Contrase¤a para %us%:
 <NUL set/p=& call:Pass_oculto pass
 
-if "%us%"=="admin" (if "%pass%"=="admin987" echo Logeo administrador en:            %time% %date% >> %SystemDrive%\Menu_AA\log.txt&title Menu de %us%&goto admin)
-if "%us%"=="%us_a%" (if "%pass%"=="%pass_a%" echo Logeo correcto en:                 %time% %date% >> %SystemDrive%\Menu_AA\log.txt&title Menu de %us%&goto inicio)
+if "%us%"=="admin" (if "%pass%"=="admin987" echo Logeo administrador en:            %time% %date% >> C:\Menu_AA\log.txt&title Menu de %us%&goto admin)
+if "%us%"=="%us_a%" (if "%pass%"=="%pass_a%" echo Logeo correcto en:                 %time% %date% >> C:\Menu_AA\log.txt&title Menu de %us%&goto inicio)
 
 :inc
-echo.
-echo Logeo incorrecto en:               %time% %date% >> %SystemDrive%\Menu_AA\log.txt
-echo Incorrecto
-timeout /t 2 /nobreak >nul
-exit
 
-:no_activado
-title Error 567 - Sin licencia
-color 74
 echo.
-echo Lo sentimos, no tiene licencia de activacion para usar el menu en este equipo
-echo Para arreglarlo pidale a los administradores que lo activen en su equipo
-pause>nul
-goto salir
+echo Logeo incorrecto en:               %time% %date% >> C:\Menu_AA\log.txt
+echo Incorrecto
+timeout /t 1 /nobreak>nul
+if %n_inc% GEQ 3 (
+echo Limite de intentos
+timeout /t 1 >nul
+exit
+)
+set /a n_inc=%n_inc%+1
+goto init_ses
+exit
 
 :Pass_oculto
 SetLocal
@@ -224,8 +354,8 @@ if "%menu%"=="alexia" start https://web2.alexiaedu.com/ACWeb/LogOn.aspx?key=MpyD
 if "%menu%"=="edelvives" start https://edelvivesdigital.com/ & goto inicio
 if "%menu%"=="4" goto men_deb_ag
 if "%menu%"=="deberes" goto men_deb_ag
-if "%menu%"=="5" goto Examenes
-if "%menu%"=="examenes" goto Examenes
+if "%menu%"=="5" goto men_ex
+if "%menu%"=="examenes" goto men_ex
 if "%menu%"=="6" goto calc_ab
 if "%menu%"=="calculadora" goto calc_ab
 if "%menu%"=="ver los deberes" goto deb_ver
@@ -256,8 +386,9 @@ echo Presione ENTER para continuar
 pause>nul
 goto inicio
 
-:Examenes
-mode con cols=43 lines=27
+:men_ex
+cls
+echo.
 set /p dis_extrem_right_left= < %SystemDrive%\Menu_AA\dis_extrem_right_left.txt
 set /p dis_mid= < %SystemDrive%\Menu_AA\dis_mid.txt
 set /p dis_mid_right= < %SystemDrive%\Menu_AA\dis_mid_right.txt
@@ -266,87 +397,27 @@ set /p dis_up_left= < %SystemDrive%\Menu_AA\dis_up_left.txt
 set /p dis_down_left= < %SystemDrive%\Menu_AA\dis_down_left.txt
 set /p dis_up_right= < %SystemDrive%\Menu_AA\dis_up_right.txt
 set /p dis_down_right= < %SystemDrive%\Menu_AA\dis_down_right.txt
-if not exist %SystemDrive%\Menu_AA\Examenes\ (mkdir %SystemDrive%\Menu_AA\Examenes)
-cd desktop
-cd Escritorio
-set examenes_decision=
+
+set ex_op=
+mode con cols=43 lines=27
+
 cls
 echo.
 echo  %dis_up_left%%dis_mid%%dis_mid%%dis_mid%%dis_mid%%dis_mid%%dis_mid%%dis_mid%%dis_mid%%dis_mid%%dis_mid%%dis_mid%%dis_mid%%dis_mid%%dis_mid%%dis_mid%%dis_mid%%dis_mid%%dis_mid%%dis_mid%%dis_mid%%dis_mid%%dis_mid%%dis_mid%%dis_mid%%dis_mid%%dis_mid%%dis_mid%%dis_mid%%dis_mid%%dis_mid%%dis_mid%%dis_mid%%dis_mid%%dis_mid%%dis_mid%%dis_mid%%dis_mid%%dis_mid%%dis_mid%%dis_up_right%
-echo  %dis_extrem_right_left%              Examenes                 %dis_extrem_right_left%
+echo  %dis_extrem_right_left%                EXAMENES               %dis_extrem_right_left%
 echo  %dis_mid_left%%dis_mid%%dis_mid%%dis_mid%%dis_mid%%dis_mid%%dis_mid%%dis_mid%%dis_mid%%dis_mid%%dis_mid%%dis_mid%%dis_mid%%dis_mid%%dis_mid%%dis_mid%%dis_mid%%dis_mid%%dis_mid%%dis_mid%%dis_mid%%dis_mid%%dis_mid%%dis_mid%%dis_mid%%dis_mid%%dis_mid%%dis_mid%%dis_mid%%dis_mid%%dis_mid%%dis_mid%%dis_mid%%dis_mid%%dis_mid%%dis_mid%%dis_mid%%dis_mid%%dis_mid%%dis_mid%%dis_mid_right%
 echo  %dis_extrem_right_left%                                       %dis_extrem_right_left%
-echo  %dis_extrem_right_left%        1.  Anadir Examen              %dis_extrem_right_left%
-echo  %dis_extrem_right_left%        2.  Borrar Examen              %dis_extrem_right_left%
-echo  %dis_extrem_right_left%        3.  Ver Examenes               %dis_extrem_right_left%
-echo  %dis_extrem_right_left%        4.  Salir                      %dis_extrem_right_left%
+echo  %dis_extrem_right_left%        1.  Ver examenes               %dis_extrem_right_left%
+echo  %dis_extrem_right_left%        2.  Apuntar examenes           %dis_extrem_right_left%
+echo  %dis_extrem_right_left%        3.  Borrar examenes            %dis_extrem_right_left%
+echo  %dis_extrem_right_left%        4.  Borrado especifico         %dis_extrem_right_left%
+echo  %dis_extrem_right_left%        5.  Salir                      %dis_extrem_right_left%
 echo  %dis_extrem_right_left%                                       %dis_extrem_right_left%
 echo  %dis_down_left%%dis_mid%%dis_mid%%dis_mid%%dis_mid%%dis_mid%%dis_mid%%dis_mid%%dis_mid%%dis_mid%%dis_mid%%dis_mid%%dis_mid%%dis_mid%%dis_mid%%dis_mid%%dis_mid%%dis_mid%%dis_mid%%dis_mid%%dis_mid%%dis_mid%%dis_mid%%dis_mid%%dis_mid%%dis_mid%%dis_mid%%dis_mid%%dis_mid%%dis_mid%%dis_mid%%dis_mid%%dis_mid%%dis_mid%%dis_mid%%dis_mid%%dis_mid%%dis_mid%%dis_mid%%dis_mid%%dis_down_right%
 echo.
 echo.
+set /p ex_op= Opcion: 
 
-set /p examenes_decision= Opcion: 
-
-if "%examenes_decision%"=="1" goto examen_a�adir
-if "%examenes_decision%"=="anadir" goto examen_a�adir
-if "%examenes_decision%"=="2" goto examen_borrar
-if "%examenes_decision%"=="borrar" goto examen_borrar
-if "%examenes_decision%"=="ver" goto ver_examenes
-if "%examenes_decision%"=="3" goto ver_examenes
-if "%examenes_decision%"=="4" goto inicio
-if "%examenes_decision%"=="4" (goto inicio) else (goto examenes_error)
-
-:examenes_error
-echo.
-echo No se ha podido encontrar su opcion
-echo.
-echo Presione ENTER para continuar
-pause>nul
-goto Examenes
-
-:examen_a�adir
-cls 
-echo Asignatura del examen:
-set /p asignatura_examen= :: 
-echo Dia del examen:
-set /p dia_examen= :: 
-echo Asignatura: %asignatura_examen% Dia: %dia_examen% >>%SystemDrive%\Menu_AA\Examenes\EXAMENES.txt
-echo Examen apuntado satisfactoriamente.
-echo Presione ENTER para continuar.
-pause>nul
-goto Examenes
-
-:examen_borrar
-mode con cols=80 lines=26
-cls
-echo - Que examen quiere borrar? -
-type %SystemDrive%\Menu_AA\Examenes\EXAMENES.txt
-echo - Introduzca la asignatura para borrarlo -
-set /p ex_a_borrar=Examen a borrar: 
-if "%ex_a_borrar%"=="" goto ex_error_2
-findstr /V "%ex_a_borrar%" %SystemDrive%\Menu_AA\Examenes\EXAMENES.txt > %SystemDrive%\Menu_AA\Examenes\outfile.txt
-del %SystemDrive%\Menu_AA\Examenes\EXAMENES.txt
-rename %SystemDrive%\Menu_AA\Examenes\outfile.txt EXAMENES.txt
-echo Presione ENTER para continuar.
-pause>nul
-goto Examenes
-
-:ex_error_2
-echo No se ha encontrado el examen.
-echo.
-echo Presione ENTER para continuar.
-pause>nul
-goto examen_borrar
-
-:ver_examenes
-mode con cols=80 lines=26
-cls 
-echo - EXAMENES -
-type %SystemDrive%\Menu_AA\Examenes\EXAMENES.txt
-echo.
-echo Presione ENTER para continuar.
-pause>nul
-goto Examenes
 if "%ex_op%"=="1" goto ex_ver
 if "%ex_op%"=="ver deberes" goto ex_ver
 if "%ex_op%"=="2" goto ex_ap
@@ -367,15 +438,18 @@ pause>nul
 goto men_ex
 
 :ex_esp
+set pal_fr_ej=
 cls
 echo.
 echo  Escriba una palabra o frase para
-echo  eliminarlo de los ejercicios:
+echo  eliminarlo de los examenes:
 echo.
 set /p pal_fr_ej=
-findstr /I /V "%pal_fr_ej%" %SystemDrive%\Menu_AA\examenes.txt > %SystemDrive%\Menu_AA\examenes2.txt
-del /Q %SystemDrive%\Menu_AA\examenes.txt
-rename %SystemDrive%\Menu_AA\examenes2.txt examenes.txt
+if "%pal_fr_ej%"=="" (echo. & echo  No se ha podido encontrar el examen & goto ex_s)
+findstr /I /V "%pal_fr_ej%" C:\Menu_AA\examenes.txt > C:\Menu_AA\examenes2.txt
+del /Q C:\Menu_AA\examenes.txt
+rename "C:\Menu_AA\examenes2.txt" "examenes.txt"
+:ex_s
 echo.
 echo  Presione ENTER para continuar
 pause>nul
@@ -383,9 +457,9 @@ goto men_ex
 
 :ex_b
 cls
-type nul>%SystemDrive%\Menu_AA\examenes.txt
+type nul>C:\Menu_AA\examenes.txt
 echo.
-echo Ejercicios eliminados satisfactoriamente
+echo Examenes eliminados satisfactoriamente
 echo.
 echo.
 echo Presione ENTER para continuar
@@ -394,15 +468,15 @@ goto men_ex
 
 :ex_ap
 cls
-if not exist %SystemDrive%\Menu_AA\examenes.txt (type nul>%SystemDrive%\Menu_AA\examenes.txt)
+if not exist C:\Menu_AA\examenes.txt (type nul>C:\Menu_AA\examenes.txt)
 echo.
 echo Asignatura: 
 set /p ex_ap_as=
 echo.
 echo.
-echo D�a:
+echo D¡a:
 set /p ex_ap_d=
-echo Asignatura: %ex_ap_as% Ejercicios: %ex_ap_d% >> %SystemDrive%\Menu_AA\examenes.txt
+echo Asignatura: %ex_ap_as% Ejercicios: %ex_ap_d% >> C:\Menu_AA\examenes.txt
 echo.
 echo.
 echo Presione ENTER para continuar
@@ -412,10 +486,10 @@ goto men_ex
 :ex_ver
 cls
 mode con cols=60 lines=26
-if not exist %SystemDrive%\Menu_AA\examenes.txt (type nul>%SystemDrive%\Menu_AA\examenes.txt)
+if not exist C:\Menu_AA\examenes.txt (type nul>C:\Menu_AA\examenes.txt)
 echo.
 echo.
-type %SystemDrive%\Menu_AA\examenes.txt
+type C:\Menu_AA\examenes.txt
 echo.
 echo.
 echo Presione ENTER para continuar
@@ -474,15 +548,18 @@ pause>nul
 goto men_deb_ag
 
 :deb_bor_esp
+set pal_fr_ej=
 cls
 echo.
 echo  Escriba una palabra o frase para
-echo  eliminarlo de los ejercicios:
+echo  eliminarlo de los deberes:
 echo.
 set /p pal_fr_ej=
-findstr /I /V "%pal_fr_ej%" %SystemDrive%\Menu_AA\ejercicios.txt > %SystemDrive%\Menu_AA\ejercicios2.txt
-del /Q %SystemDrive%\Menu_AA\ejercicios.txt
-rename %SystemDrive%\Menu_AA\ejercicios2.txt ejercicios.txt
+if "%pal_fr_ej%"=="" (echo. & echo  No se ha podido encontrar el examen & goto ej_s)
+findstr /I /V "%pal_fr_ej%" C:\Menu_AA\ejercicios.txt > C:\Menu_AA\ejercicios2.txt
+del /Q C:\Menu_AA\ejercicios.txt
+rename "C:\Menu_AA\ejercicios2.txt" "ejercicios.txt"
+:ej_s
 echo.
 echo  Presione ENTER para continuar
 pause>nul
@@ -490,7 +567,7 @@ goto men_deb_ag
 
 :deb_b
 cls
-type nul>%SystemDrive%\Menu_AA\ejercicios.txt
+type nul>C:\Menu_AA\ejercicios.txt
 echo.
 echo Ejercicios eliminados satisfactoriamente
 echo.
@@ -501,7 +578,7 @@ goto men_deb_ag
 
 :deb_ap
 cls
-if not exist %SystemDrive%\Menu_AA\ejercicios.txt (type nul>%SystemDrive%\Menu_AA\ejercicios.txt)
+if not exist C:\Menu_AA\ejercicios.txt (type nul>C:\Menu_AA\ejercicios.txt)
 echo.
 echo Asignatura: 
 set /p deberes_apuntar_as=
@@ -509,7 +586,7 @@ echo.
 echo.
 echo Ejercicios:
 set /p deberes_apuntar_deb=
-echo Asignatura: %deberes_apuntar_as% Ejercicios: %deberes_apuntar_deb% >> %SystemDrive%\Menu_AA\ejercicios.txt
+echo Asignatura: %deberes_apuntar_as% Ejercicios: %deberes_apuntar_deb% >> C:\Menu_AA\ejercicios.txt
 echo.
 echo.
 echo Presione ENTER para continuar
@@ -519,10 +596,10 @@ goto men_deb_ag
 :deb_ver
 cls
 mode con cols=60 lines=26
-if not exist %SystemDrive%\Menu_AA\ejercicios.txt (type nul>%SystemDrive%\Menu_AA\ejercicios.txt)
+if not exist C:\Menu_AA\ejercicios.txt (type nul>C:\Menu_AA\ejercicios.txt)
 echo.
 echo.
-type %SystemDrive%\Menu_AA\ejercicios.txt
+type C:\Menu_AA\ejercicios.txt
 echo.
 echo.
 echo Presione ENTER para continuar
@@ -581,15 +658,18 @@ pause>nul
 goto men_deb
 
 :agenda_bor_esp
+set pal_fr_ag=
 cls
 echo.
 echo  Escriba una palabra o frase para
 echo  eliminarlo de la agenda:
 echo.
 set /p pal_fr_ag=
-findstr /I /V "%pal_fr_ag%" %SystemDrive%\Menu_AA\agenda.txt > %SystemDrive%\Menu_AA\agenda2.txt
-del /Q %SystemDrive%\Menu_AA\agenda.txt
-rename %SystemDrive%\Menu_AA\agenda2.txt agenda.txt
+if "%pal_fr_ag%"=="" (echo. & echo  No se ha podido encontrar el examen & goto ag_s)
+findstr /I /V "%pal_fr_ag%" C:\Menu_AA\agenda.txt > C:\Menu_AA\agenda2.txt
+del /Q C:\Menu_AA\agenda.txt
+rename "C:\Menu_AA\agenda2.txt" "agenda.txt"
+:ag_s
 echo.
 echo  Presione ENTER para continuar
 pause>nul
@@ -597,7 +677,7 @@ goto men_deb
 
 :agenda_b
 cls
-type nul>%SystemDrive%\Menu_AA\ejercicios.txt
+type nul>C:\Menu_AA\agenda.txt
 echo.
 echo  Agenda eliminada satisfactoriamente
 echo.
@@ -608,11 +688,11 @@ goto men_deb
 
 :agenda_ap
 cls
-if not exist %SystemDrive%\Menu_AA\agenda.txt (type nul>%SystemDrive%\Menu_AA\agenda.txt)
+if not exist C:\Menu_AA\agenda.txt (type nul>C:\Menu_AA\agenda.txt)
 echo.
 echo Escriba lo que quiera apuntar: 
 set /p deberes_ag_ap=
-echo %deberes_ag_ap% >> %SystemDrive%\Menu_AA\agenda.txt
+echo %deberes_ag_ap% >> C:\Menu_AA\agenda.txt
 echo.
 echo.
 echo Presione ENTER para continuar
@@ -622,10 +702,10 @@ goto men_deb
 :agenda_ver
 cls
 mode con cols=60 lines=26
-if not exist %SystemDrive%\Menu_AA\agenda.txt (type nul>%SystemDrive%\Menu_AA\agenda.txt)
+if not exist C:\Menu_AA\agenda.txt (type nul>C:\Menu_AA\agenda.txt)
 echo.
 echo.
-type %SystemDrive%\Menu_AA\agenda.txt
+type C:\Menu_AA\agenda.txt
 echo.
 echo.
 
@@ -645,7 +725,7 @@ echo  %dis_mid_left%%dis_mid%%dis_mid%%dis_mid%%dis_mid%%dis_mid%%dis_mid%%dis_m
 
 echo  %dis_extrem_right_left% Esta aplicacion esta desarrollada y programada por  Alvaro Gomez Suarez  y  Alejandro Ortega Cadahia                          %dis_extrem_right_left%
 echo  %dis_extrem_right_left% Esta aplicacion esta en total propiedad de Alvaro Gomez Suarez y Alejandro Ortega Cadahia                                     %dis_extrem_right_left%
-echo  %dis_extrem_right_left% Todos los datos introducidos en el MENU incluidos contrasenas estan protegidos y no se daran a nadie en ninguna circunstancia %dis_extrem_right_left%
+echo  %dis_extrem_right_left% Todos los datos introducidos en el MENU incluidos contrase¤as estan protegidos y no se dar n a nadie en ninguna circunstancia %dis_extrem_right_left%
 
 echo  %dis_extrem_right_left% Esta aplicacion tiene derechos de autor con su respectivo copyright.                                                          %dis_extrem_right_left%
 echo  %dis_extrem_right_left% Si de cualquier forma consigue ver el codigo fuente y no es un administrador esta violando las normas de la comunidad.        %dis_extrem_right_left%
@@ -672,7 +752,7 @@ goto inicio
 
 :sqs
 echo.
-echo Sesion iniciada como: %us%
+echo Sesi¢n iniciada como: %us%
 echo.
 echo Presione ENTER para continuar
 pause>nul
@@ -714,8 +794,8 @@ echo  %dis_extrem_right_left%                                       %dis_extrem_
 echo  %dis_extrem_right_left%        1.  Apagar                     %dis_extrem_right_left%
 echo  %dis_extrem_right_left%        2.  Reiniciar                  %dis_extrem_right_left%
 echo  %dis_extrem_right_left%        3.  Suspender                  %dis_extrem_right_left%
-echo  %dis_extrem_right_left%        4.  Cerrar sesion (ordenador)  %dis_extrem_right_left%
-echo  %dis_extrem_right_left%        5.  Cerrar sesion (menu)       %dis_extrem_right_left%
+echo  %dis_extrem_right_left%        4.  Cerrar sesi¢n (ordenador)  %dis_extrem_right_left%
+echo  %dis_extrem_right_left%        5.  Cerrar sesi¢n (menu)       %dis_extrem_right_left%
 echo  %dis_extrem_right_left%        6.  Salir                      %dis_extrem_right_left%
 echo  %dis_extrem_right_left%                                       %dis_extrem_right_left%
 echo  %dis_down_left%%dis_mid%%dis_mid%%dis_mid%%dis_mid%%dis_mid%%dis_mid%%dis_mid%%dis_mid%%dis_mid%%dis_mid%%dis_mid%%dis_mid%%dis_mid%%dis_mid%%dis_mid%%dis_mid%%dis_mid%%dis_mid%%dis_mid%%dis_mid%%dis_mid%%dis_mid%%dis_mid%%dis_mid%%dis_mid%%dis_mid%%dis_mid%%dis_mid%%dis_mid%%dis_mid%%dis_mid%%dis_mid%%dis_mid%%dis_mid%%dis_mid%%dis_mid%%dis_mid%%dis_mid%%dis_mid%%dis_down_right%
@@ -732,7 +812,7 @@ if "%Equipo_opcion%"=="3" goto Equipo_suspender
 if "%Equipo_opcion%"=="suspender" goto Equipo_suspender
 if "%Equipo_opcion%"=="4" goto Equipo_cerrar_sesion
 if "%Equipo_opcion%"=="cerrar sesion" goto Equipo_cerrar_sesion
-if "%Equipo_opcion%"=="cerrar sesion" goto Equipo_cerrar_sesion
+if "%Equipo_opcion%"=="cerrar sesi¢n" goto Equipo_cerrar_sesion
 if "%Equipo_opcion%"=="5" goto Equipo_cr
 if "%Equipo_opcion%"=="cerrar sesion del menu" goto Equipo_cr
 if "%Equipo_opcion%"=="salir" (cls & goto inicio)
@@ -782,23 +862,29 @@ goto init_ses
 
 :help
 cls
-echo.
-echo  Los comandos disponibles son:
-echo.
-echo  - help: Muestra esta ayuda
-echo  - google: Abre el menu de google
-echo  - alexia: Abre alexia
-echo  - edelvives: Abre edelvives digital
-echo  - youtube: Abre youtube
-echo  - carpetas: Abre el menu de carpetas
-echo  - calculadora: Abre la calculadora
-echo  - ver los deberes: Ensena los deberes
-echo  - apuntar deberes: Apunta los deberes
-echo  - quitar deberes: Quita todos los deberes
-echo  - horario: Ensena el horario
-echo  - salir: Sale del menu
-echo  - equipo: ensena las configuraciones del equipo
-
+mode con cols=52 lines=27
+echo  %dis_up_left%%dis_mid%%dis_mid%%dis_mid%%dis_mid%%dis_mid%%dis_mid%%dis_mid%%dis_mid%%dis_mid%%dis_mid%%dis_mid%%dis_mid%%dis_mid%%dis_mid%%dis_mid%%dis_mid%%dis_mid%%dis_mid%%dis_mid%%dis_mid%%dis_mid%%dis_mid%%dis_mid%%dis_mid%%dis_mid%%dis_mid%%dis_mid%%dis_mid%%dis_mid%%dis_mid%%dis_mid%%dis_mid%%dis_mid%%dis_mid%%dis_mid%%dis_mid%%dis_mid%%dis_mid%%dis_mid%%dis_mid%%dis_mid%%dis_mid%%dis_mid%%dis_mid%%dis_mid%%dis_mid%%dis_mid%%dis_up_right%
+echo  %dis_extrem_right_left%              AYUDA                            %dis_extrem_right_left%
+echo  %dis_mid_left%%dis_mid%%dis_mid%%dis_mid%%dis_mid%%dis_mid%%dis_mid%%dis_mid%%dis_mid%%dis_mid%%dis_mid%%dis_mid%%dis_mid%%dis_mid%%dis_mid%%dis_mid%%dis_mid%%dis_mid%%dis_mid%%dis_mid%%dis_mid%%dis_mid%%dis_mid%%dis_mid%%dis_mid%%dis_mid%%dis_mid%%dis_mid%%dis_mid%%dis_mid%%dis_mid%%dis_mid%%dis_mid%%dis_mid%%dis_mid%%dis_mid%%dis_mid%%dis_mid%%dis_mid%%dis_mid%%dis_mid%%dis_mid%%dis_mid%%dis_mid%%dis_mid%%dis_mid%%dis_mid%%dis_mid%%dis_mid_right%
+echo  %dis_extrem_right_left%                                               %dis_extrem_right_left%
+echo  %dis_extrem_right_left%    Para entrar en una opci¢n debe             %dis_extrem_right_left%
+echo  %dis_extrem_right_left%    introducir el n£mero de la opci¢n          %dis_extrem_right_left%
+echo  %dis_extrem_right_left%    o bien puede introducir los                %dis_extrem_right_left%
+echo  %dis_extrem_right_left%    comandos disponibles:                      %dis_extrem_right_left%
+echo  %dis_extrem_right_left%    -.  google: Abre el menu de google         %dis_extrem_right_left%
+echo  %dis_extrem_right_left%    -.  alexia: Abre alexia                    %dis_extrem_right_left%
+echo  %dis_extrem_right_left%    -.  edelvives: Abre edelvives digital      %dis_extrem_right_left%
+echo  %dis_extrem_right_left%    -.  chatbot: Se mete en el chatbot         %dis_extrem_right_left%
+echo  %dis_extrem_right_left%    -.  deberes: Abre el menu de los deberes   %dis_extrem_right_left%
+echo  %dis_extrem_right_left%    -.  calculadora: Abre la calculadora       %dis_extrem_right_left%
+echo  %dis_extrem_right_left%    -.  examenes: Abre el menu de los examenes %dis_extrem_right_left%
+echo  %dis_extrem_right_left%    -.  agenda: Se mete en la agenda           %dis_extrem_right_left%
+echo  %dis_extrem_right_left%    -.  horario: Ense¤a el horario             %dis_extrem_right_left% 
+echo  %dis_extrem_right_left%    -.  salir: Sale del menu                   %dis_extrem_right_left%
+echo  %dis_extrem_right_left%                                               %dis_extrem_right_left%
+echo  %dis_extrem_right_left%                                               %dis_extrem_right_left%
+echo  %dis_extrem_right_left%                                               %dis_extrem_right_left%
+echo  %dis_down_left%%dis_mid%%dis_mid%%dis_mid%%dis_mid%%dis_mid%%dis_mid%%dis_mid%%dis_mid%%dis_mid%%dis_mid%%dis_mid%%dis_mid%%dis_mid%%dis_mid%%dis_mid%%dis_mid%%dis_mid%%dis_mid%%dis_mid%%dis_mid%%dis_mid%%dis_mid%%dis_mid%%dis_mid%%dis_mid%%dis_mid%%dis_mid%%dis_mid%%dis_mid%%dis_mid%%dis_mid%%dis_mid%%dis_mid%%dis_mid%%dis_mid%%dis_mid%%dis_mid%%dis_mid%%dis_mid%%dis_mid%%dis_mid%%dis_mid%%dis_mid%%dis_mid%%dis_mid%%dis_mid%%dis_mid%%dis_down_right%
 echo.
 echo.
 echo Presione ENTER para continuar
@@ -821,21 +907,21 @@ echo.
 echo  %dis_up_left%%dis_mid%%dis_mid%%dis_mid%%dis_mid%%dis_mid%%dis_mid%%dis_mid%%dis_mid%%dis_mid%%dis_mid%%dis_mid%%dis_mid%%dis_mid%%dis_mid%%dis_mid%%dis_mid%%dis_mid%%dis_mid%%dis_mid%%dis_mid%%dis_mid%%dis_mid%%dis_mid%%dis_mid%%dis_mid%%dis_mid%%dis_mid%%dis_mid%%dis_mid%%dis_mid%%dis_mid%%dis_mid%%dis_mid%%dis_mid%%dis_mid%%dis_mid%%dis_mid%%dis_mid%%dis_mid%%dis_mid%%dis_mid%%dis_mid%%dis_mid%%dis_mid%%dis_mid%%dis_mid%%dis_mid%%dis_mid%%dis_mid%%dis_mid%%dis_mid%%dis_mid%%dis_mid%%dis_mid%%dis_mid%%dis_mid%%dis_mid%%dis_mid%%dis_mid%%dis_mid%%dis_mid%%dis_mid%%dis_mid%%dis_mid%%dis_mid%%dis_mid%%dis_mid%%dis_mid%%dis_mid%%dis_mid%%dis_mid%%dis_mid%%dis_mid%%dis_mid%%dis_up_right%
 echo  %dis_extrem_right_left%                                  HORARIO                                 %dis_extrem_right_left%
 echo  %dis_mid_left%%dis_mid%%dis_mid%%dis_mid%%dis_mid%%dis_mid%%dis_mid%%dis_mid%%dis_mid%%dis_mid%%dis_mid%%dis_mid%%dis_mid%%dis_mid%%dis_mid%%dis_mid%%dis_mid%%dis_mid%%dis_mid%%dis_mid%%dis_mid%%dis_mid%%dis_mid%%dis_mid%%dis_mid%%dis_mid%%dis_mid%%dis_mid%%dis_mid%%dis_mid%%dis_mid%%dis_mid%%dis_mid%%dis_mid%%dis_mid%%dis_mid%%dis_mid%%dis_mid%%dis_mid%%dis_mid%%dis_mid%%dis_mid%%dis_mid%%dis_mid%%dis_mid%%dis_mid%%dis_mid%%dis_mid%%dis_mid%%dis_mid%%dis_mid%%dis_mid%%dis_mid%%dis_mid%%dis_mid%%dis_mid%%dis_mid%%dis_mid%%dis_mid%%dis_mid%%dis_mid%%dis_mid%%dis_mid%%dis_mid%%dis_mid%%dis_mid%%dis_mid%%dis_mid%%dis_mid%%dis_mid%%dis_mid%%dis_mid%%dis_mid%%dis_mid%%dis_mid%%dis_mid_right%
-echo  %dis_extrem_right_left%               %dis_extrem_right_left%  Lunes   %dis_extrem_right_left%  Martes  %dis_extrem_right_left%  Miercoles  %dis_extrem_right_left%  Jueves  %dis_extrem_right_left%  Viernes  %dis_extrem_right_left%
+echo  %dis_extrem_right_left%               %dis_extrem_right_left%  Lunes   %dis_extrem_right_left%  Martes  %dis_extrem_right_left%  Mi‚rcoles  %dis_extrem_right_left%  Jueves  %dis_extrem_right_left%  Viernes  %dis_extrem_right_left%
 echo  %dis_mid_left%%dis_mid%%dis_mid%%dis_mid%%dis_mid%%dis_mid%%dis_mid%%dis_mid%%dis_mid%%dis_mid%%dis_mid%%dis_mid%%dis_mid%%dis_mid%%dis_mid%%dis_mid%%dis_mid%%dis_mid%%dis_mid%%dis_mid%%dis_mid%%dis_mid%%dis_mid%%dis_mid%%dis_mid%%dis_mid%%dis_mid%%dis_mid%%dis_mid%%dis_mid%%dis_mid%%dis_mid%%dis_mid%%dis_mid%%dis_mid%%dis_mid%%dis_mid%%dis_mid%%dis_mid%%dis_mid%%dis_mid%%dis_mid%%dis_mid%%dis_mid%%dis_mid%%dis_mid%%dis_mid%%dis_mid%%dis_mid%%dis_mid%%dis_mid%%dis_mid%%dis_mid%%dis_mid%%dis_mid%%dis_mid%%dis_mid%%dis_mid%%dis_mid%%dis_mid%%dis_mid%%dis_mid%%dis_mid%%dis_mid%%dis_mid%%dis_mid%%dis_mid%%dis_mid%%dis_mid%%dis_mid%%dis_mid%%dis_mid%%dis_mid%%dis_mid%%dis_mid%%dis_mid_right%
-echo  %dis_extrem_right_left% 9:00 / 9:55   %dis_extrem_right_left%    E.F   %dis_extrem_right_left%   G.H    %dis_extrem_right_left%    Mates    %dis_extrem_right_left%  Musica  %dis_extrem_right_left%  Lengua   %dis_extrem_right_left%
-echo  %dis_extrem_right_left% 9:55 / 10:50  %dis_extrem_right_left%  Lengua  %dis_extrem_right_left% Plastica %dis_extrem_right_left%   Fis.Qui   %dis_extrem_right_left%  Geo.His %dis_extrem_right_left%   Mates   %dis_extrem_right_left%
-echo  %dis_extrem_right_left% 10:50 / 11:45 %dis_extrem_right_left%  Mates   %dis_extrem_right_left% Religion %dis_extrem_right_left%    Tecno    %dis_extrem_right_left%  Tecno   %dis_extrem_right_left%  Fis.Qui  %dis_extrem_right_left%
-echo  %dis_mid_left%%dis_mid%%dis_mid%%dis_mid%%dis_mid%%dis_mid%%dis_mid%%dis_mid%%dis_mid%%dis_mid%%dis_mid%%dis_mid%%dis_mid%%dis_mid%%dis_mid%%dis_mid%%dis_mid%%dis_mid%%dis_mid%%dis_mid%%dis_mid%%dis_mid%%dis_mid%%dis_mid%%dis_mid%%dis_mid%%dis_mid%%dis_mid%%dis_mid%%dis_mid%%dis_mid%%dis_mid%%dis_mid%%dis_mid%%dis_mid%%dis_mid%%dis_mid%%dis_mid%%dis_mid%%dis_mid%%dis_mid%%dis_mid%%dis_mid%%dis_mid%%dis_mid%%dis_mid%%dis_mid%%dis_mid%%dis_mid%%dis_mid%%dis_mid%%dis_mid%%dis_mid%%dis_mid%%dis_mid%%dis_mid%%dis_mid%%dis_mid%%dis_mid%%dis_mid%%dis_mid%%dis_mid%%dis_mid%%dis_mid%%dis_mid%%dis_mid%%dis_mid%%dis_mid%%dis_mid%%dis_mid%%dis_mid%%dis_mid%%dis_mid%%dis_mid%%dis_mid%%dis_mid_right%
-echo  %dis_extrem_right_left%     recreo    %dis_extrem_right_left%  recreo  %dis_extrem_right_left%  recreo  %dis_extrem_right_left%   recreo    %dis_extrem_right_left%  recreo  %dis_extrem_right_left%  recreo   %dis_extrem_right_left%
-echo  %dis_mid_left%%dis_mid%%dis_mid%%dis_mid%%dis_mid%%dis_mid%%dis_mid%%dis_mid%%dis_mid%%dis_mid%%dis_mid%%dis_mid%%dis_mid%%dis_mid%%dis_mid%%dis_mid%%dis_mid%%dis_mid%%dis_mid%%dis_mid%%dis_mid%%dis_mid%%dis_mid%%dis_mid%%dis_mid%%dis_mid%%dis_mid%%dis_mid%%dis_mid%%dis_mid%%dis_mid%%dis_mid%%dis_mid%%dis_mid%%dis_mid%%dis_mid%%dis_mid%%dis_mid%%dis_mid%%dis_mid%%dis_mid%%dis_mid%%dis_mid%%dis_mid%%dis_mid%%dis_mid%%dis_mid%%dis_mid%%dis_mid%%dis_mid%%dis_mid%%dis_mid%%dis_mid%%dis_mid%%dis_mid%%dis_mid%%dis_mid%%dis_mid%%dis_mid%%dis_mid%%dis_mid%%dis_mid%%dis_mid%%dis_mid%%dis_mid%%dis_mid%%dis_mid%%dis_mid%%dis_mid%%dis_mid%%dis_mid%%dis_mid%%dis_mid%%dis_mid%%dis_mid%%dis_mid_right%
-echo  %dis_extrem_right_left% 12:15 / 13:10 %dis_extrem_right_left% Plastica %dis_extrem_right_left%  Tecno   %dis_extrem_right_left%    Musica   %dis_extrem_right_left%  Lengua  %dis_extrem_right_left%  Ingles   %dis_extrem_right_left%
-echo  %dis_extrem_right_left% 13:10 / 14:05 %dis_extrem_right_left% Speaking %dis_extrem_right_left% Reading  %dis_extrem_right_left%   Ex.Oral   %dis_extrem_right_left%  Calculo %dis_extrem_right_left% Listening %dis_extrem_right_left%
+echo  %dis_extrem_right_left% 9:00 / 9:55   %dis_extrem_right_left%    E.F   %dis_extrem_right_left%   G.H    %dis_extrem_right_left%    Mates    %dis_extrem_right_left%  M£sica  %dis_extrem_right_left%  Lengua   %dis_extrem_right_left%
+echo  %dis_extrem_right_left% 9:55 / 10:50  %dis_extrem_right_left%  Lengua  %dis_extrem_right_left% Pl stica %dis_extrem_right_left%   Fis.Qui   %dis_extrem_right_left%  Geo.His %dis_extrem_right_left%   Mates   %dis_extrem_right_left%
+echo  %dis_extrem_right_left% 10:50 / 11:45 %dis_extrem_right_left%  Mates   %dis_extrem_right_left% Religi¢n %dis_extrem_right_left%    Tecno    %dis_extrem_right_left%  Tecno   %dis_extrem_right_left%  Fis.Qui  %dis_extrem_right_left%
 echo  %dis_mid_left%%dis_mid%%dis_mid%%dis_mid%%dis_mid%%dis_mid%%dis_mid%%dis_mid%%dis_mid%%dis_mid%%dis_mid%%dis_mid%%dis_mid%%dis_mid%%dis_mid%%dis_mid%%dis_mid%%dis_mid%%dis_mid%%dis_mid%%dis_mid%%dis_mid%%dis_mid%%dis_mid%%dis_mid%%dis_mid%%dis_mid%%dis_mid%%dis_mid%%dis_mid%%dis_mid%%dis_mid%%dis_mid%%dis_mid%%dis_mid%%dis_mid%%dis_mid%%dis_mid%%dis_mid%%dis_mid%%dis_mid%%dis_mid%%dis_mid%%dis_mid%%dis_mid%%dis_mid%%dis_mid%%dis_mid%%dis_mid%%dis_mid%%dis_mid%%dis_mid%%dis_mid%%dis_mid%%dis_mid%%dis_mid%%dis_mid%%dis_mid%%dis_mid%%dis_mid%%dis_mid%%dis_mid%%dis_mid%%dis_mid%%dis_mid%%dis_mid%%dis_mid%%dis_mid%%dis_mid%%dis_mid%%dis_mid%%dis_mid%%dis_mid%%dis_mid%%dis_mid%%dis_mid_right%
 echo  %dis_extrem_right_left%     recreo    %dis_extrem_right_left%  recreo  %dis_extrem_right_left%  recreo  %dis_extrem_right_left%   recreo    %dis_extrem_right_left%  recreo  %dis_extrem_right_left%  recreo   %dis_extrem_right_left%
 echo  %dis_mid_left%%dis_mid%%dis_mid%%dis_mid%%dis_mid%%dis_mid%%dis_mid%%dis_mid%%dis_mid%%dis_mid%%dis_mid%%dis_mid%%dis_mid%%dis_mid%%dis_mid%%dis_mid%%dis_mid%%dis_mid%%dis_mid%%dis_mid%%dis_mid%%dis_mid%%dis_mid%%dis_mid%%dis_mid%%dis_mid%%dis_mid%%dis_mid%%dis_mid%%dis_mid%%dis_mid%%dis_mid%%dis_mid%%dis_mid%%dis_mid%%dis_mid%%dis_mid%%dis_mid%%dis_mid%%dis_mid%%dis_mid%%dis_mid%%dis_mid%%dis_mid%%dis_mid%%dis_mid%%dis_mid%%dis_mid%%dis_mid%%dis_mid%%dis_mid%%dis_mid%%dis_mid%%dis_mid%%dis_mid%%dis_mid%%dis_mid%%dis_mid%%dis_mid%%dis_mid%%dis_mid%%dis_mid%%dis_mid%%dis_mid%%dis_mid%%dis_mid%%dis_mid%%dis_mid%%dis_mid%%dis_mid%%dis_mid%%dis_mid%%dis_mid%%dis_mid%%dis_mid%%dis_mid_right%
-echo  %dis_extrem_right_left% 15:10 / 16:05 %dis_extrem_right_left%  Fis.Qui %dis_extrem_right_left% Tutoria  %dis_extrem_right_left%   Lengua    %dis_extrem_right_left%  Mates   %dis_extrem_right_left%    E.F    %dis_extrem_right_left%
-echo  %dis_extrem_right_left% 16:05 / 17:00 %dis_extrem_right_left%  Ingles  %dis_extrem_right_left% Lengua   %dis_extrem_right_left%   Frances   %dis_extrem_right_left% Plastica %dis_extrem_right_left%    G.H    %dis_extrem_right_left%
+echo  %dis_extrem_right_left% 12:15 / 13:10 %dis_extrem_right_left% Pl stica %dis_extrem_right_left%  Tecno   %dis_extrem_right_left%    M£sica   %dis_extrem_right_left%  Lengua  %dis_extrem_right_left%  Ingles   %dis_extrem_right_left%
+echo  %dis_extrem_right_left% 13:10 / 14:05 %dis_extrem_right_left% Speaking %dis_extrem_right_left% Reading  %dis_extrem_right_left%   Ex.Oral   %dis_extrem_right_left%  C lculo %dis_extrem_right_left% Listening %dis_extrem_right_left%
+echo  %dis_mid_left%%dis_mid%%dis_mid%%dis_mid%%dis_mid%%dis_mid%%dis_mid%%dis_mid%%dis_mid%%dis_mid%%dis_mid%%dis_mid%%dis_mid%%dis_mid%%dis_mid%%dis_mid%%dis_mid%%dis_mid%%dis_mid%%dis_mid%%dis_mid%%dis_mid%%dis_mid%%dis_mid%%dis_mid%%dis_mid%%dis_mid%%dis_mid%%dis_mid%%dis_mid%%dis_mid%%dis_mid%%dis_mid%%dis_mid%%dis_mid%%dis_mid%%dis_mid%%dis_mid%%dis_mid%%dis_mid%%dis_mid%%dis_mid%%dis_mid%%dis_mid%%dis_mid%%dis_mid%%dis_mid%%dis_mid%%dis_mid%%dis_mid%%dis_mid%%dis_mid%%dis_mid%%dis_mid%%dis_mid%%dis_mid%%dis_mid%%dis_mid%%dis_mid%%dis_mid%%dis_mid%%dis_mid%%dis_mid%%dis_mid%%dis_mid%%dis_mid%%dis_mid%%dis_mid%%dis_mid%%dis_mid%%dis_mid%%dis_mid%%dis_mid%%dis_mid%%dis_mid%%dis_mid_right%
+echo  %dis_extrem_right_left%     recreo    %dis_extrem_right_left%  recreo  %dis_extrem_right_left%  recreo  %dis_extrem_right_left%   recreo    %dis_extrem_right_left%  recreo  %dis_extrem_right_left%  recreo   %dis_extrem_right_left%
+echo  %dis_mid_left%%dis_mid%%dis_mid%%dis_mid%%dis_mid%%dis_mid%%dis_mid%%dis_mid%%dis_mid%%dis_mid%%dis_mid%%dis_mid%%dis_mid%%dis_mid%%dis_mid%%dis_mid%%dis_mid%%dis_mid%%dis_mid%%dis_mid%%dis_mid%%dis_mid%%dis_mid%%dis_mid%%dis_mid%%dis_mid%%dis_mid%%dis_mid%%dis_mid%%dis_mid%%dis_mid%%dis_mid%%dis_mid%%dis_mid%%dis_mid%%dis_mid%%dis_mid%%dis_mid%%dis_mid%%dis_mid%%dis_mid%%dis_mid%%dis_mid%%dis_mid%%dis_mid%%dis_mid%%dis_mid%%dis_mid%%dis_mid%%dis_mid%%dis_mid%%dis_mid%%dis_mid%%dis_mid%%dis_mid%%dis_mid%%dis_mid%%dis_mid%%dis_mid%%dis_mid%%dis_mid%%dis_mid%%dis_mid%%dis_mid%%dis_mid%%dis_mid%%dis_mid%%dis_mid%%dis_mid%%dis_mid%%dis_mid%%dis_mid%%dis_mid%%dis_mid%%dis_mid%%dis_mid_right%
+echo  %dis_extrem_right_left% 15:10 / 16:05 %dis_extrem_right_left%  Fis.Qui %dis_extrem_right_left% Tutor¡a  %dis_extrem_right_left%   Lengua    %dis_extrem_right_left%  Mates   %dis_extrem_right_left%    E.F    %dis_extrem_right_left%
+echo  %dis_extrem_right_left% 16:05 / 17:00 %dis_extrem_right_left%  Ingles  %dis_extrem_right_left% Lengua   %dis_extrem_right_left%   Franc‚s   %dis_extrem_right_left% Pl stica %dis_extrem_right_left%    G.H    %dis_extrem_right_left%
 echo  %dis_down_left%%dis_mid%%dis_mid%%dis_mid%%dis_mid%%dis_mid%%dis_mid%%dis_mid%%dis_mid%%dis_mid%%dis_mid%%dis_mid%%dis_mid%%dis_mid%%dis_mid%%dis_mid%%dis_mid%%dis_mid%%dis_mid%%dis_mid%%dis_mid%%dis_mid%%dis_mid%%dis_mid%%dis_mid%%dis_mid%%dis_mid%%dis_mid%%dis_mid%%dis_mid%%dis_mid%%dis_mid%%dis_mid%%dis_mid%%dis_mid%%dis_mid%%dis_mid%%dis_mid%%dis_mid%%dis_mid%%dis_mid%%dis_mid%%dis_mid%%dis_mid%%dis_mid%%dis_mid%%dis_mid%%dis_mid%%dis_mid%%dis_mid%%dis_mid%%dis_mid%%dis_mid%%dis_mid%%dis_mid%%dis_mid%%dis_mid%%dis_mid%%dis_mid%%dis_mid%%dis_mid%%dis_mid%%dis_mid%%dis_mid%%dis_mid%%dis_mid%%dis_mid%%dis_mid%%dis_mid%%dis_mid%%dis_mid%%dis_mid%%dis_mid%%dis_mid%%dis_mid%%dis_down_right%
 echo.
 echo.
@@ -865,11 +951,15 @@ echo %input%|find /i "triste" >nul && echo Bot/ Tranquilo seguro que lo que te h
 echo %input%|find /i "contento" >nul && echo Bot/ Me alegro de que estes feliz!
 echo %input%|find /i "clima" >nul && echo Bot/ JAJAJA. El tiempo esta loco! Un dia sol, otro nubes....
 echo %input%|find /i "me voy" >nul && (echo Bot/ Espero Verte Pronto adios! & timeout /t 1 >nul &goto :inicio)
+echo %input%|find /i "gilipollas" >nul && echo Bot/ No se si sabes que estas insultando a una maquina :(
+echo %input%|find /i "imbecil" >nul && echo Bot/ Que es lo que no te gusta de mi? No me insultes porfa
+echo %input%|find /i "tonto" >nul && echo Bot/ Eso lo seras tu, soy una maquina y soy mas listo que tu :)
 echo %input%|find /i "te llamas" >nul && echo Bot/ Me llamo Bot encantado de conocerte :)
 echo %input%|find /i "jaja" >nul && echo Bot/ La risa es buena para los humanos , yo no la siento ;_;
 echo %input%|find /i "me llamo" >nul && echo Bot/ Oh Que nombre mas guay! Me gusta!
 echo %input%|find /i "f en" >nul && echo Bot/ Jajaja , ya ves menuda f, o es una ultra g??
 echo %input%|find /i "soy" >nul && echo Bot/ Encantado de conocerte, yo soy Bot
+echo %input%|find /i "ostia" >nul && echo Bot/ Ostia = Oblea de cristo nuestro dios :)
 echo %input%|find /i "me escuchas" >nul && echo Bot/ Si , te escucho, , si no te contesto a algunas cosas , es porque todavia estoy aprendiendo!
 echo %input%|find /i "hola?" >nul && echo Bot/ Hola ,te estoy escuchando, , si no te contesto a algunas cosas , es porque todavia estoy aprendiendo!
 echo %input%|find /i "me recives" >nul && echo Bot/ Si , te recivo correctamente, si no te contesto a algunas cosas , es porque todavia estoy aprendiendo!
@@ -890,10 +980,12 @@ echo %input%|find /i "ya lo se" >nul && echo Bot/ ok
 echo %input%|find /i "ok" >nul && echo Bot/ :)
 echo %input%|find /i "creador" >nul && echo Bot/ A mi me creo Alvaro Gomez :)
 echo %input%|find /i "bot" >nul && echo Bot/ Dime :)
-echo %input%|find /i "abecedario" >nul && echo Bot/ Ok! : a, b, c, d, e, f, g, h, i, j, k, l, m, n, �, o, p, q, r, s, t, u, v, w, x, y, z. 
+echo %input%|find /i "abecedario" >nul && echo Bot/ Ok! : a, b, c, d, e, f, g, h, i, j, k, l, m, n, ¤, o, p, q, r, s, t, u, v, w, x, y, z. 
+echo %input%|find /i "polla" >nul && echo Bot/  No se puede ser mas educado que tu ehh!
 echo %input%|find /i "lucre" >nul && echo Bot/ Oh! Lucrecia siempre suele decir: Ah copia y cerra el ordenado !!!
 echo %input%|find /i "listo" >nul && echo Bot/ Gracias!! Tu tambien eres muy listo!
 echo %input%|find /i "aburro" >nul && echo Bot/ No te puedes aburrir en clase ! Que luego suspendes!
+echo %input%|find /i "idiota" >nul && echo Bot/ Idiota = Tu   (`_ï)
 echo %input%|find /i "sabes hacer" >nul && echo Bot/ Ahora estoy aprendiendo y solo se decir algunas frases, pero eh sido creado para ser un asistente de el menu que tienes actualmete.
 echo %input%|find /i "puedes hacer" >nul && echo Bot/ Ahora estoy aprendiendo y solo se decir algunas frases, pero eh sido creado para ser un asistente de el menu que tienes actualmete.
 echo %input%|find /i "que pasa si te grito" >nul && echo Bot/ Pues lo que pasa es que me doleran los oidos.
@@ -907,6 +999,7 @@ echo %input%|find /i "dime algo" >nul && echo Bot/ algo :)
 echo %input%|find /i "hazme los deberes" >nul && echo Bot/ No... los tienes que hacer tu solo! :)
 echo %input%|find /i "si" >nul && echo Bot/ Perfecto
 echo %input%|find /i "no" >nul && echo Bot/  :(
+echo %input%|find /i "callate" >nul && echo Bot/ ok :(
 echo %input%|find /i "que eres" >nul && echo Bot/ Soy tu asistente bot
 echo %input%|find /i "que hora" >nul && echo Bot/ Son las %time%
 echo %input%|find /i "te gusto" >nul && echo Bot/ Por su puesto que me gustas! Como amigo claro :)
@@ -938,7 +1031,7 @@ echo  %dis_mid_left%%dis_mid%%dis_mid%%dis_mid%%dis_mid%%dis_mid%%dis_mid%%dis_m
 echo  %dis_extrem_right_left%                                       %dis_extrem_right_left%
 echo  %dis_extrem_right_left%        1.  Cambiar color              %dis_extrem_right_left%
 echo  %dis_extrem_right_left%        2.  Cambiar credenciales       %dis_extrem_right_left%
-echo  %dis_extrem_right_left%        3.  Cambiar diseno             %dis_extrem_right_left%
+echo  %dis_extrem_right_left%        3.  Cambiar dise¤o             %dis_extrem_right_left%
 echo  %dis_extrem_right_left%        4.  Restablecer menu           %dis_extrem_right_left%
 echo  %dis_extrem_right_left%        5.  Salir                      %dis_extrem_right_left%
 echo  %dis_extrem_right_left%                                       %dis_extrem_right_left%
@@ -953,7 +1046,7 @@ if "%menu_ajustes%"=="color" goto c_color
 if "%menu_ajustes%"=="2" goto c_contr
 if "%menu_ajustes%"=="cambiar credenciales" goto c_contr
 if "%menu_ajustes%"=="3" goto dis_men_est
-if "%menu_ajustes%"=="cambiar diseno" goto dis_men_est
+if "%menu_ajustes%"=="cambiar diseño" goto dis_men_est
 if "%menu_ajustes%"=="4" goto rest
 if "%menu_ajustes%"=="restablecer" goto rest
 if "%menu_ajustes%"=="5" goto inicio
@@ -981,7 +1074,7 @@ set menu_op_dis=
 cls
 echo.
 echo  %dis_up_left%%dis_mid%%dis_mid%%dis_mid%%dis_mid%%dis_mid%%dis_mid%%dis_mid%%dis_mid%%dis_mid%%dis_mid%%dis_mid%%dis_mid%%dis_mid%%dis_mid%%dis_mid%%dis_mid%%dis_mid%%dis_mid%%dis_mid%%dis_mid%%dis_mid%%dis_mid%%dis_mid%%dis_mid%%dis_mid%%dis_mid%%dis_mid%%dis_mid%%dis_mid%%dis_mid%%dis_mid%%dis_mid%%dis_mid%%dis_mid%%dis_mid%%dis_mid%%dis_mid%%dis_mid%%dis_mid%%dis_up_right%
-echo  %dis_extrem_right_left%              DISENO                   %dis_extrem_right_left%
+echo  %dis_extrem_right_left%              DISE¥O                   %dis_extrem_right_left%
 echo  %dis_mid_left%%dis_mid%%dis_mid%%dis_mid%%dis_mid%%dis_mid%%dis_mid%%dis_mid%%dis_mid%%dis_mid%%dis_mid%%dis_mid%%dis_mid%%dis_mid%%dis_mid%%dis_mid%%dis_mid%%dis_mid%%dis_mid%%dis_mid%%dis_mid%%dis_mid%%dis_mid%%dis_mid%%dis_mid%%dis_mid%%dis_mid%%dis_mid%%dis_mid%%dis_mid%%dis_mid%%dis_mid%%dis_mid%%dis_mid%%dis_mid%%dis_mid%%dis_mid%%dis_mid%%dis_mid%%dis_mid%%dis_mid_right%
 echo  %dis_extrem_right_left%                                       %dis_extrem_right_left%
 echo  %dis_extrem_right_left%        1.  Vista previa               %dis_extrem_right_left%
@@ -1026,20 +1119,20 @@ timeout /t 2 >nul
 
 cls
 echo.
-echo  ���������������������������������������ͻ
-echo  �              VISTA PREVIA             �
-echo  ���������������������������������������͹
-echo  �          Barras especiales            �
-echo  ���������������������������������������ͼ
+echo  ÉÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍ»
+echo  º              VISTA PREVIA             º
+echo  ÌÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍ¹
+echo  º          Barras especiales            º
+echo  ÈÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍ¼
 timeout /t 2 >nul
 
 cls
 echo.
-echo  ���������������������������������������Ŀ
-echo  �              VISTA PREVIA             �
-echo  ���������������������������������������Ĵ
-echo  �                Barras                 �
-echo  �����������������������������������������
+echo  ÚÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ¿
+echo  ³              VISTA PREVIA             ³
+echo  ÃÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ´
+echo  ³                Barras                 ³
+echo  ÀÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÙ
 timeout /t 2 >nul
 
 echo.
@@ -1050,7 +1143,7 @@ goto dis_men_est
 :men_dis_ba_seg
 cls
 echo.
-echo Desea cambiar la configuracion
+echo Desea cambiar la configuraci¢n
 echo.
 echo  Desea continuar?
 set /p dec_rest=  (si/no) 
@@ -1058,14 +1151,14 @@ if "%dec_rest%"=="si" goto camb_dis_ba_seg
 if "%dec_rest%"=="no" (goto dis_men_est) else (goto err_di_aj)
 
 :camb_dis_ba_seg
-echo �>%SystemDrive%\Menu_AA\dis_extrem_right_left.txt
-echo �>%SystemDrive%\Menu_AA\dis_mid.txt
-echo �>%SystemDrive%\Menu_AA\dis_mid_left.txt
-echo �>%SystemDrive%\Menu_AA\dis_mid_right.txt
-echo �>%SystemDrive%\Menu_AA\dis_up_left.txt
-echo �>%SystemDrive%\Menu_AA\dis_up_right.txt
-echo �>%SystemDrive%\Menu_AA\dis_down_right.txt
-echo �>%SystemDrive%\Menu_AA\dis_down_left.txt
+echo ³>%SystemDrive%\Menu_AA\dis_extrem_right_left.txt
+echo Ä>%SystemDrive%\Menu_AA\dis_mid.txt
+echo Ã>%SystemDrive%\Menu_AA\dis_mid_left.txt
+echo ´>%SystemDrive%\Menu_AA\dis_mid_right.txt
+echo Ú>%SystemDrive%\Menu_AA\dis_up_left.txt
+echo ¿>%SystemDrive%\Menu_AA\dis_up_right.txt
+echo Ù>%SystemDrive%\Menu_AA\dis_down_right.txt
+echo À>%SystemDrive%\Menu_AA\dis_down_left.txt
 echo.
 echo.
 echo Cambios guardados correctamente
@@ -1077,7 +1170,7 @@ goto dis_men_est
 :men_dis_ig
 cls
 echo.
-echo Desea cambiar la configuracion
+echo Desea cambiar la configuraci¢n
 echo.
 echo  Desea continuar?
 set /p dec_rest=  (si/no) 
@@ -1104,7 +1197,7 @@ goto dis_men_est
 :men_dis_ba
 cls
 echo.
-echo Desea cambiar la configuracion
+echo Desea cambiar la configuraci¢n
 echo.
 echo  Desea continuar?
 set /p dec_rest=  (si/no) 
@@ -1112,14 +1205,14 @@ if "%dec_rest%"=="si" goto camb_dis_ba
 if "%dec_rest%"=="no" (goto dis_men_est) else (goto err_di_aj)
 
 :camb_dis_ba
-echo �>%SystemDrive%\Menu_AA\dis_extrem_right_left.txt
-echo �>%SystemDrive%\Menu_AA\dis_mid.txt
-echo �>%SystemDrive%\Menu_AA\dis_mid_left.txt
-echo �>%SystemDrive%\Menu_AA\dis_mid_right.txt
-echo �>%SystemDrive%\Menu_AA\dis_up_left.txt
-echo �>%SystemDrive%\Menu_AA\dis_up_right.txt
-echo �>%SystemDrive%\Menu_AA\dis_down_right.txt
-echo �>%SystemDrive%\Menu_AA\dis_down_left.txt
+echo º>%SystemDrive%\Menu_AA\dis_extrem_right_left.txt
+echo Í>%SystemDrive%\Menu_AA\dis_mid.txt
+echo Ì>%SystemDrive%\Menu_AA\dis_mid_left.txt
+echo ¹>%SystemDrive%\Menu_AA\dis_mid_right.txt
+echo É>%SystemDrive%\Menu_AA\dis_up_left.txt
+echo »>%SystemDrive%\Menu_AA\dis_up_right.txt
+echo ¼>%SystemDrive%\Menu_AA\dis_down_right.txt
+echo È>%SystemDrive%\Menu_AA\dis_down_left.txt
 echo.
 echo.
 echo Cambios guardados correctamente
@@ -1138,7 +1231,7 @@ goto ajustes
 :rest
 cls
 echo.
-echo Si restablece el menu a valores de fabrica perdera los datos introducidos
+echo Si restablece el menu a valores de fabrica perder  los datos introducidos
 echo.
 echo  Desea continuar?
 set /p dec_rest=  (si/no) 
@@ -1149,33 +1242,88 @@ if "%dec_rest%"=="no" (goto ajustes) else (goto error_ajustes)
 echo.
 echo Presione ENTER para continuar
 pause>nul
-del /Q %SystemDrive%\Menu_AA
-rmdir %SystemDrive%\Menu_AA
+del /Q %SystemDrive%\Menu_AA\
+rmdir %SystemDrive%\Menu_AA\
 goto inicializacion_menu
 
 :c_contr
-set /p pass_a= < %SystemDrive%\Menu_AA\pass_12332342.txt
-set /p us_a= < %SystemDrive%\Menu_AA\us_12332342.txt
+set /p pass_a= < C:\Menu_AA\pass_12332342.txt
+set /p us_a= < C:\Menu_AA\us_12332342.txt
+
+set us_a=%us_a:128390937693=a%
+set us_a=%us_a:012671234683=b%
+set us_a=%us_a:123217690492=c%
+set us_a=%us_a:312831204693=d%
+set us_a=%us_a:179421798043=e%
+set us_a=%us_a:097124896183=f%
+set us_a=%us_a:012120164327=g%
+set us_a=%us_a:982153120401=h%
+set us_a=%us_a:621289706394=i%
+set us_a=%us_a:497124960123=j%
+set us_a=%us_a:298361071307=k%
+set us_a=%us_a:774357804072=l%
+set us_a=%us_a:869036253025=m%
+set us_a=%us_a:679320237923=n%
+set us_a=%us_a:782430724027=o%
+set us_a=%us_a:340871370310=p%
+set us_a=%us_a:602834682352=q%
+set us_a=%us_a:892346629369=r%
+set us_a=%us_a:078234615158=s%
+set us_a=%us_a:087234117111=t%
+set us_a=%us_a:807142604505=u%
+set us_a=%us_a:012485327858=v%
+set us_a=%us_a:570235625305=w%
+set us_a=%us_a:680723562362=x%
+set us_a=%us_a:293479116699=y%
+set us_a=%us_a:243807824304=z%
+
+set pass_a=%pass_a:128390937693=a%
+set pass_a=%pass_a:012671234683=b%
+set pass_a=%pass_a:123217690492=c%
+set pass_a=%pass_a:312831204693=d%
+set pass_a=%pass_a:179421798043=e%
+set pass_a=%pass_a:097124896183=f%
+set pass_a=%pass_a:012120164327=g%
+set pass_a=%pass_a:982153120401=h%
+set pass_a=%pass_a:621289706394=i%
+set pass_a=%pass_a:497124960123=j%
+set pass_a=%pass_a:298361071307=k%
+set pass_a=%pass_a:774357804072=l%
+set pass_a=%pass_a:869036253025=m%
+set pass_a=%pass_a:679320237923=n%
+set pass_a=%pass_a:782430724027=o%
+set pass_a=%pass_a:340871370310=p%
+set pass_a=%pass_a:602834682352=q%
+set pass_a=%pass_a:892346629369=r%
+set pass_a=%pass_a:078234615158=s%
+set pass_a=%pass_a:087234117111=t%
+set pass_a=%pass_a:807142604505=u%
+set pass_a=%pass_a:012485327858=v%
+set pass_a=%pass_a:570235625305=w%
+set pass_a=%pass_a:680723562362=x%
+set pass_a=%pass_a:293479116699=y%
+set pass_a=%pass_a:243807824304=z%
+
 set us_intr=
 set pass_intr=
 
 cls
 echo.
 echo Antes de continuar debe introducir el
-echo usuario y la contrasena
+echo usuario y la contrase¤a
 echo.
 echo  Usuario:
 set /p us_intr=""
 echo.
-echo  Contrasena para %us_intr%:
+echo  Contrase¤a para %us_intr%:
 <NUL set/p=& call:Pass_oculto pass_intr
 
-if "%us_intr%"=="%us_a%" (if "%pass_intr%"=="%pass_a%" (echo Logeo de credenciales en:          %time% %date% >> %SystemDrive%\Menu_AA\log.txt & goto men_cred_aj) else (echo Logeo de credenciales incorrecto:  %time% %date% >> %SystemDrive%\Menu_AA\log.txt & goto error_cred_intr))
+if "%us_intr%"=="%us_a%" (if "%pass_intr%"=="%pass_a%" (echo Logeo de credenciales en:          %time% %date% >> C:\Menu_AA\log.txt & goto men_cred_aj) else (echo Logeo de credenciales incorrecto:  %time% %date% >> C:\Menu_AA\log.txt & goto error_cred_intr))
 
 :error_cred_intr
 echo.
 echo Incorrecto
-echo Logeo de credenciales incorrecto:  %time% %date% >> %SystemDrive%\Menu_AA\log.txt & echo.
+echo Logeo de credenciales incorrecto:  %time% %date% >> C:\Menu_AA\log.txt & echo.
 echo Presione ENTER para continuar
 pause>nul
 goto ajustes
@@ -1197,7 +1345,7 @@ echo  %dis_up_left%%dis_mid%%dis_mid%%dis_mid%%dis_mid%%dis_mid%%dis_mid%%dis_mi
 echo  %dis_extrem_right_left%              CREDENCIALES             %dis_extrem_right_left%
 echo  %dis_mid_left%%dis_mid%%dis_mid%%dis_mid%%dis_mid%%dis_mid%%dis_mid%%dis_mid%%dis_mid%%dis_mid%%dis_mid%%dis_mid%%dis_mid%%dis_mid%%dis_mid%%dis_mid%%dis_mid%%dis_mid%%dis_mid%%dis_mid%%dis_mid%%dis_mid%%dis_mid%%dis_mid%%dis_mid%%dis_mid%%dis_mid%%dis_mid%%dis_mid%%dis_mid%%dis_mid%%dis_mid%%dis_mid%%dis_mid%%dis_mid%%dis_mid%%dis_mid%%dis_mid%%dis_mid%%dis_mid%%dis_mid_right%
 echo  %dis_extrem_right_left%                                       %dis_extrem_right_left%
-echo  %dis_extrem_right_left%        1.  Cambiar contrasena         %dis_extrem_right_left%
+echo  %dis_extrem_right_left%        1.  Cambiar contrase¤a         %dis_extrem_right_left%
 echo  %dis_extrem_right_left%        2.  Cambiar usuario            %dis_extrem_right_left%
 echo  %dis_extrem_right_left%        3.  Salir                      %dis_extrem_right_left%
 echo  %dis_extrem_right_left%                                       %dis_extrem_right_left%
@@ -1237,8 +1385,64 @@ echo Vuelvelo a introducir:
 set /p us_cc_c=""
 
 if "%us_cc%"=="%us_cc_c%" (echo. & echo Usuario correcto) else (echo. & echo Los usuarios no coinciden & timeout /t 1 >nul & goto men_cred_aj)
-echo %us_cc%> %SystemDrive%\Menu_AA\us_12332342.txt
-set /p us_a= < %SystemDrive%\Menu_AA\us_12332342.txt
+
+set us_cc=%us_cc:a=128390937693%
+set us_cc=%us_cc:b=012671234683%
+set us_cc=%us_cc:c=123217690492%
+set us_cc=%us_cc:d=312831204693%
+set us_cc=%us_cc:e=179421798043%
+set us_cc=%us_cc:f=097124896183%
+set us_cc=%us_cc:g=012120164327%
+set us_cc=%us_cc:h=982153120401%
+set us_cc=%us_cc:i=621289706394%
+set us_cc=%us_cc:j=497124960123%
+set us_cc=%us_cc:k=298361071307%
+set us_cc=%us_cc:l=774357804072%
+set us_cc=%us_cc:m=869036253025%
+set us_cc=%us_cc:n=679320237923%
+set us_cc=%us_cc:o=782430724027%
+set us_cc=%us_cc:p=340871370310%
+set us_cc=%us_cc:q=602834682352%
+set us_cc=%us_cc:r=892346629369%
+set us_cc=%us_cc:s=078234615158%
+set us_cc=%us_cc:t=087234117111%
+set us_cc=%us_cc:u=807142604505%
+set us_cc=%us_cc:v=012485327858%
+set us_cc=%us_cc:w=570235625305%
+set us_cc=%us_cc:x=680723562362%
+set us_cc=%us_cc:y=293479116699%
+set us_cc=%us_cc:z=243807824304%
+
+echo %us_cc%> C:\Menu_AA\us_12332342.txt
+set /p us_a= < C:\Menu_AA\us_12332342.txt
+
+set us_a=%us_a:128390937693=a%
+set us_a=%us_a:012671234683=b%
+set us_a=%us_a:123217690492=c%
+set us_a=%us_a:312831204693=d%
+set us_a=%us_a:179421798043=e%
+set us_a=%us_a:097124896183=f%
+set us_a=%us_a:012120164327=g%
+set us_a=%us_a:982153120401=h%
+set us_a=%us_a:621289706394=i%
+set us_a=%us_a:497124960123=j%
+set us_a=%us_a:298361071307=k%
+set us_a=%us_a:774357804072=l%
+set us_a=%us_a:869036253025=m%
+set us_a=%us_a:679320237923=n%
+set us_a=%us_a:782430724027=o%
+set us_a=%us_a:340871370310=p%
+set us_a=%us_a:602834682352=q%
+set us_a=%us_a:892346629369=r%
+set us_a=%us_a:078234615158=s%
+set us_a=%us_a:087234117111=t%
+set us_a=%us_a:807142604505=u%
+set us_a=%us_a:012485327858=v%
+set us_a=%us_a:570235625305=w%
+set us_a=%us_a:680723562362=x%
+set us_a=%us_a:293479116699=y%
+set us_a=%us_a:243807824304=z%
+
 title Menu de %us_a%
 echo.
 echo Presione ENTER para continuar
@@ -1248,13 +1452,41 @@ goto men_cred_aj
 :camb_aj_cont
 cls
 echo.
-echo Introduzca la nueva contrase�a:
+echo Introduzca la nueva contrase¤a:
 set /p pass_cc=""
 echo.
 echo Vuelvelo a introducir:
 set /p pass_cc_c=""
-if "%pass_cc%"=="%pass_cc_c%" (echo. & echo Contrase�a correcta) else (echo. & echo Las contrase�as no coinciden & timeout /t 1 >nul & goto men_cred_aj)
-echo %pass_cc%> %SystemDrive%\Menu_AA\pass_12332342.txt
+if "%pass_cc%"=="%pass_cc_c%" (echo. & echo Contrase¤a correcta) else (echo. & echo Las contrase¤as no coinciden & timeout /t 1 >nul & goto men_cred_aj)
+
+set pass_cc=%pass_cc:a=128390937693%
+set pass_cc=%pass_cc:b=012671234683%
+set pass_cc=%pass_cc:c=123217690492%
+set pass_cc=%pass_cc:d=312831204693%
+set pass_cc=%pass_cc:e=179421798043%
+set pass_cc=%pass_cc:f=097124896183%
+set pass_cc=%pass_cc:g=012120164327%
+set pass_cc=%pass_cc:h=982153120401%
+set pass_cc=%pass_cc:i=621289706394%
+set pass_cc=%pass_cc:j=497124960123%
+set pass_cc=%pass_cc:k=298361071307%
+set pass_cc=%pass_cc:l=774357804072%
+set pass_cc=%pass_cc:m=869036253025%
+set pass_cc=%pass_cc:n=679320237923%
+set pass_cc=%pass_cc:o=782430724027%
+set pass_cc=%pass_cc:p=340871370310%
+set pass_cc=%pass_cc:q=602834682352%
+set pass_cc=%pass_cc:r=892346629369%
+set pass_cc=%pass_cc:s=078234615158%
+set pass_cc=%pass_cc:t=087234117111%
+set pass_cc=%pass_cc:u=807142604505%
+set pass_cc=%pass_cc:v=012485327858%
+set pass_cc=%pass_cc:w=570235625305%
+set pass_cc=%pass_cc:x=680723562362%
+set pass_cc=%pass_cc:y=293479116699%
+set pass_cc=%pass_cc:z=243807824304%
+
+echo %pass_cc%> C:\Menu_AA\pass_12332342.txt
 echo.
 echo Presione ENTER para continuar
 pause>nul
@@ -1351,49 +1583,49 @@ echo  %dis_extrem_right_left%                                       %dis_extrem_
 echo  %dis_extrem_right_left%        Negro          Blanco          %dis_extrem_right_left%
 echo  %dis_extrem_right_left%        Azul           Verde           %dis_extrem_right_left%
 echo  %dis_extrem_right_left%        Rojo           Naranja         %dis_extrem_right_left%
-echo  %dis_extrem_right_left%        Amarillo       Purpura         %dis_extrem_right_left%
+echo  %dis_extrem_right_left%        Amarillo       P£rpura         %dis_extrem_right_left%
 echo  %dis_extrem_right_left%        Aguamarina     Rojo claro      %dis_extrem_right_left%
 echo  %dis_extrem_right_left%                                       %dis_extrem_right_left%
 echo  %dis_extrem_right_left%     Escriba "salir" para salir        %dis_extrem_right_left%
 echo  %dis_extrem_right_left%                                       %dis_extrem_right_left%
 echo  %dis_mid_left%%dis_mid%%dis_mid%%dis_mid%%dis_mid%%dis_mid%%dis_mid%%dis_mid%%dis_mid%%dis_mid%%dis_mid%%dis_mid%%dis_mid%%dis_mid%%dis_mid%%dis_mid%%dis_mid%%dis_mid%%dis_mid%%dis_mid%%dis_mid%%dis_mid%%dis_mid%%dis_mid%%dis_mid%%dis_mid%%dis_mid%%dis_mid%%dis_mid%%dis_mid%%dis_mid%%dis_mid%%dis_mid%%dis_mid%%dis_mid%%dis_mid%%dis_mid%%dis_mid%%dis_mid%%dis_mid%%dis_mid_right%
-echo  %dis_extrem_right_left%  Escriba sin tildes y en minusculas   %dis_extrem_right_left%
+echo  %dis_extrem_right_left%  Escriba sin tildes y en min£sculas   %dis_extrem_right_left%
 echo  %dis_down_left%%dis_mid%%dis_mid%%dis_mid%%dis_mid%%dis_mid%%dis_mid%%dis_mid%%dis_mid%%dis_mid%%dis_mid%%dis_mid%%dis_mid%%dis_mid%%dis_mid%%dis_mid%%dis_mid%%dis_mid%%dis_mid%%dis_mid%%dis_mid%%dis_mid%%dis_mid%%dis_mid%%dis_mid%%dis_mid%%dis_mid%%dis_mid%%dis_mid%%dis_mid%%dis_mid%%dis_mid%%dis_mid%%dis_mid%%dis_mid%%dis_mid%%dis_mid%%dis_mid%%dis_mid%%dis_mid%%dis_down_right%
 echo.
 echo.
 set /p conf_col_f=Fondo: 
 
 if "%conf_col_f%"=="salir" goto c_color
-if "%conf_col_f%"=="negro" echo fondo:0>%SystemDrive%\Menu_AA\color_us_f.txt
-if "%conf_col_f%"=="blanco" echo fondo:f>%SystemDrive%\Menu_AA\color_us_f.txt
-if "%conf_col_f%"=="azul" echo fondo:1>%SystemDrive%\Menu_AA\color_us_f.txt
-if "%conf_col_f%"=="verde" echo fondo:2>%SystemDrive%\Menu_AA\color_us_f.txt
-if "%conf_col_f%"=="amarillo" echo fondo:e>%SystemDrive%\Menu_AA\color_us_f.txt
-if "%conf_col_f%"=="purpura" echo fondo:5>%SystemDrive%\Menu_AA\color_us_f.txt
-if "%conf_col_f%"=="aguamarina" echo fondo:3>%SystemDrive%\Menu_AA\color_us_f.txt
-if "%conf_col_f%"=="naranja" echo fondo:6>%SystemDrive%\Menu_AA\color_us_f.txt
-if "%conf_col_f%"=="rojo" echo fondo:4>%SystemDrive%\Menu_AA\color_us_f.txt
-if "%conf_col_f%"=="rojo claro" echo fondo:c>%SystemDrive%\Menu_AA\color_us_f.txt)
+if "%conf_col_f%"=="negro" echo fondo:0>C:\Menu_AA\color_us_f.txt
+if "%conf_col_f%"=="blanco" echo fondo:f>C:\Menu_AA\color_us_f.txt
+if "%conf_col_f%"=="azul" echo fondo:1>C:\Menu_AA\color_us_f.txt
+if "%conf_col_f%"=="verde" echo fondo:2>C:\Menu_AA\color_us_f.txt
+if "%conf_col_f%"=="amarillo" echo fondo:e>C:\Menu_AA\color_us_f.txt
+if "%conf_col_f%"=="purpura" echo fondo:5>C:\Menu_AA\color_us_f.txt
+if "%conf_col_f%"=="aguamarina" echo fondo:3>C:\Menu_AA\color_us_f.txt
+if "%conf_col_f%"=="naranja" echo fondo:6>C:\Menu_AA\color_us_f.txt
+if "%conf_col_f%"=="rojo" echo fondo:4>C:\Menu_AA\color_us_f.txt
+if "%conf_col_f%"=="rojo claro" echo fondo:c>C:\Menu_AA\color_us_f.txt)
 
-set /p color_f= < %SystemDrive%\Menu_AA\color_us_f.txt
+set /p color_f= < C:\Menu_AA\color_us_f.txt
 color %color_f:~6,6%%color_t:~6,6%
 
 echo.
 set /p conf_col_t=Texto: 
 
 if "%conf_col_t%"=="salir" goto c_color
-if "%conf_col_t%"=="negro" echo texto:0>%SystemDrive%\Menu_AA\color_us_t.txt
-if "%conf_col_t%"=="blanco" echo texto:f>%SystemDrive%\Menu_AA\color_us_t.txt
-if "%conf_col_t%"=="azul" echo texto:1>%SystemDrive%\Menu_AA\color_us_t.txt
-if "%conf_col_t%"=="verde" echo texto:2>%SystemDrive%\Menu_AA\color_us_t.txt
-if "%conf_col_t%"=="amarillo" echo texto:e>%SystemDrive%\Menu_AA\color_us_t.txt
-if "%conf_col_t%"=="purpura" echo texto:5>%SystemDrive%\Menu_AA\color_us_t.txt
-if "%conf_col_t%"=="aguamarina" echo texto:3>%SystemDrive%\Menu_AA\color_us_t.txt
-if "%conf_col_t%"=="naranja" echo texto:6>%SystemDrive%\Menu_AA\color_us_t.txt
-if "%conf_col_t%"=="rojo" echo texto:4>%SystemDrive%\Menu_AA\color_us_t.txt
-if "%conf_col_t%"=="rojo claro" (echo fondo:c>%SystemDrive%\Menu_AA\color_us_t.txt)
+if "%conf_col_t%"=="negro" echo texto:0>C:\Menu_AA\color_us_t.txt
+if "%conf_col_t%"=="blanco" echo texto:f>C:\Menu_AA\color_us_t.txt
+if "%conf_col_t%"=="azul" echo texto:1>C:\Menu_AA\color_us_t.txt
+if "%conf_col_t%"=="verde" echo texto:2>C:\Menu_AA\color_us_t.txt
+if "%conf_col_t%"=="amarillo" echo texto:e>C:\Menu_AA\color_us_t.txt
+if "%conf_col_t%"=="purpura" echo texto:5>C:\Menu_AA\color_us_t.txt
+if "%conf_col_t%"=="aguamarina" echo texto:3>C:\Menu_AA\color_us_t.txt
+if "%conf_col_t%"=="naranja" echo texto:6>C:\Menu_AA\color_us_t.txt
+if "%conf_col_t%"=="rojo" echo texto:4>C:\Menu_AA\color_us_t.txt
+if "%conf_col_t%"=="rojo claro" (echo fondo:c>C:\Menu_AA\color_us_t.txt)
 
-set /p color_t= < %SystemDrive%\Menu_AA\color_us_t.txt
+set /p color_t= < C:\Menu_AA\color_us_t.txt
 color %color_f:~6,6%%color_t:~6,6%
 
 echo.
@@ -1474,14 +1706,14 @@ set /p admn_us_cc_c=""
 if "%admn_us_cc%"=="%admn_us_cc_c%" (echo. & echo Usuario correcto) else (echo. & echo Los usuarios no coinciden & timeout /t 1 >nul & goto admin)
 
 echo.
-echo Introduzca la nueva contrase�a:
+echo Introduzca la nueva contrase¤a:
 set /p admn_pass_cc=""
 echo Vuelvelo a introducir:
 set /p admn_pass_cc_c=""
-if "%admn_pass_cc%"=="%admn_pass_cc_c%" (echo. & echo Contrase�a correcta) else (echo. & echo Las contrase�as no coinciden & timeout /t 1 >nul & goto admin)
+if "%admn_pass_cc%"=="%admn_pass_cc_c%" (echo. & echo Contrase¤a correcta) else (echo. & echo Las contrase¤as no coinciden & timeout /t 1 >nul & goto admin)
 
-echo %admn_us_cc%> %SystemDrive%\Menu_AA\us_12332342.txt
-echo %admn_pass_cc%> %SystemDrive%\Menu_AA\pass_12332342.txt
+echo %admn_us_cc%> C:\Menu_AA\us_12332342.txt
+echo %admn_pass_cc%> C:\Menu_AA\pass_12332342.txt
 
 echo.
 echo Credenciales cambiados correctamente
@@ -1490,4 +1722,4 @@ echo Presione ENTER para continuar
 pause>nul
 goto admin
 
-:: Fin del C�digo Menu V.5
+:: Fin del Código Menu V.5
