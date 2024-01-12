@@ -1,7 +1,7 @@
-:: Codigo Menu V.5
+:: Codigo Menu V.1
 :: Aplicación desarrollada y programada por Álvaro Gómez Suarez & Alejandro Ortega Cadahia
-:: Esta aplicación tiene derechos de autor con su respectivo copyright.
-:: Si esta viendo este código y no es un administrador esta violando las normas de la comunidad.
+
+
 
 @echo off
 title Iniciando menu
