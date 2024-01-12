@@ -172,13 +172,13 @@ set /p color_t= < %SystemDrive%\Menu_AA\color_us_t.txt
 color %color_f:~6,6%%color_t:~6,6%
 
 :init_ses
-attrib -h %SystemDrive%\Activacion\948375274093480983928.txt
-set /p act_cont= < %SystemDrive%\Activacion\948375274093480983928.txt
-if not exist %SystemDrive%\Activacion\948375274093480983928.txt (goto no_activado)
+attrib -h %SystemDrive%\Menu_Activacion\948375274093480983928.txt
+set /p act_cont= < %SystemDrive%\Menu_Activacion\948375274093480983928.txt
+if not exist %SystemDrive%\Menu_Activacion\948375274093480983928.txt (goto no_activado)
 if "%act_cont%"=="98328yqwd89r983yr90wf0y509705709505709570750750975093ure093u0e9dxh94ohtehfoyu059095u050u5096u9u59u696" (goto cont_lic) else (goto no_activado)
 
 :no_activado
-attrib +h %SystemDrive%\Activacion\948375274093480983928.txt
+attrib +h %SystemDrive%\Menu_Activacion\948375274093480983928.txt
 title Error de activaci¢n - Sin licencia
 color 74
 cls
